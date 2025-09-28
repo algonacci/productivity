@@ -1,0 +1,292 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[
+    pdftitle={Laporan Penelitian},
+    pdfauthor={Nama Mahasiswa},
+    pdfsubject={Penelitian},
+    pdfkeywords={penelitian, laporan, indonesia},
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=blue
+]{hyperref}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+% Font Times New Roman (mathptmx untuk compatibility)
+\usepackage{mathptmx}
+
+% Code listing settings
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    language=Python,
+    numbers=left,
+    numberstyle=\tiny,
+    backgroundcolor=\color{gray!10},
+    commentstyle=\color{green!50!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
+
+% Geometry - A4 dengan margin standar Indonesia
+\geometry{
+    a4paper,
+    left=4cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Spacing 1.5
+\onehalfspacing
+
+% Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Title page info
+\title{\textbf{JUDUL LAPORAN PENELITIAN}}
+\author{
+    Nama Mahasiswa\\
+    NIM: 123456789\\
+    Kelas: X\\
+    \\
+    \textbf{PROGRAM STUDI}\\
+    \textbf{FAKULTAS}\\
+    \textbf{UNIVERSITAS}\\
+    \textbf{TAHUN}
+}
+\date{}
+
+\begin{document}
+
+% Title page
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+% Table of contents
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\setcounter{page}{1}
+
+\section{PENDAHULUAN}
+
+\subsection{Latar Belakang}
+\lipsum[1-2]
+
+\subsection{Rumusan Masalah}
+Berdasarkan latar belakang yang telah dijelaskan, dapat dirumuskan masalah sebagai berikut:
+\begin{enumerate}
+    \item Bagaimana cara mengimplementasikan algoritma machine learning?
+    \item Apa saja tantangan dalam pengembangan sistem ini?
+    \item Bagaimana evaluasi performa sistem yang telah dibuat?
+\end{enumerate}
+
+\subsection{Tujuan Penelitian}
+Tujuan dari penelitian ini adalah:
+\begin{enumerate}
+    \item Mengembangkan sistem yang efisien dan akurat
+    \item Melakukan analisis performa terhadap berbagai metode
+    \item Memberikan rekomendasi untuk pengembangan lebih lanjut
+\end{enumerate}
+
+\subsection{Manfaat Penelitian}
+Manfaat yang diharapkan dari penelitian ini meliputi:
+\begin{enumerate}
+    \item \textbf{Manfaat Teoritis}: Memberikan kontribusi terhadap pengembangan ilmu pengetahuan
+    \item \textbf{Manfaat Praktis}: Dapat diimplementasikan dalam kehidupan sehari-hari
+\end{enumerate}
+
+\section{TINJAUAN PUSTAKA}
+
+\subsection{Konsep Dasar}
+\lipsum[3]
+
+\subsection{Penelitian Terkait}
+Berbagai penelitian telah dilakukan dalam bidang machine learning \cite{smith2023machine}. Algoritma klasik seperti yang dijelaskan oleh \cite{brown2022algorithms} masih relevan dalam konteks modern. Pendekatan deep learning yang dikembangkan oleh \cite{wilson2023deep} menunjukkan hasil yang menjanjikan.
+
+\subsubsection{Metode Klasik}
+\lipsum[4]
+
+\subsubsection{Pendekatan Modern}
+\lipsum[5]
+
+\section{METODOLOGI PENELITIAN}
+
+\subsection{Jenis Penelitian}
+\lipsum[6]
+
+\subsection{Waktu dan Tempat Penelitian}
+Penelitian ini dilaksanakan pada bulan Januari - September 2025 di Laboratorium Komputer, Universitas ABC.
+
+\subsection{Populasi dan Sampel}
+Dataset yang digunakan dalam penelitian ini terdiri dari beberapa komponen seperti yang ditunjukkan pada Tabel \ref{tab:dataset}.
+
+\begin{table}[H]
+\centering
+\caption{Karakteristik Dataset}
+\label{tab:dataset}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Kategori} & \textbf{Jumlah} & \textbf{Persentase} \\
+\midrule
+Training Data & 8.000 & 80\% \\
+Validation Data & 1.000 & 10\% \\
+Test Data & 1.000 & 10\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Teknik Pengumpulan Data}
+Data dikumpulkan melalui beberapa metode:
+\begin{enumerate}
+    \item Observasi langsung
+    \item Studi literatur
+    \item Eksperimen terkontrol
+\end{enumerate}
+
+\subsection{Teknik Analisis Data}
+Berikut adalah contoh implementasi algoritma yang digunakan:
+
+\begin{lstlisting}[caption=Implementasi Algoritma Machine Learning, label=lst:algorithm]
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+def load_and_preprocess_data(file_path):
+    """
+    Memuat dan melakukan preprocessing data
+    """
+    data = pd.read_csv(file_path)
+
+    # Membersihkan data dari nilai null
+    data = data.dropna()
+
+    # Normalisasi fitur numerik
+    numeric_features = data.select_dtypes(include=[np.number]).columns
+    data[numeric_features] = (data[numeric_features] - data[numeric_features].mean()) / data[numeric_features].std()
+
+    return data
+
+def train_model(X_train, y_train):
+    """
+    Melatih model Random Forest
+    """
+    model = RandomForestClassifier(
+        n_estimators=100,
+        max_depth=10,
+        random_state=42
+    )
+
+    model.fit(X_train, y_train)
+    return model
+
+# Main execution
+if __name__ == "__main__":
+    # Load data
+    data = load_and_preprocess_data("dataset.csv")
+
+    # Split features and target
+    X = data.drop('target', axis=1)
+    y = data['target']
+
+    # Train-test split
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+
+    # Train model
+    model = train_model(X_train, y_train)
+
+    # Evaluate
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+
+    print(f"Accuracy: {accuracy:.4f}")
+    print(classification_report(y_test, y_pred))
+\end{lstlisting}
+
+\section{HASIL DAN PEMBAHASAN}
+
+\subsection{Hasil Penelitian}
+\lipsum[7]
+
+Hasil evaluasi performa model ditunjukkan pada Tabel \ref{tab:results}.
+
+\begin{table}[H]
+\centering
+\caption{Hasil Evaluasi Model}
+\label{tab:results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} \\
+\midrule
+Random Forest & 0,8945 & 0,8712 & 0,9123 \\
+SVM & 0,8734 & 0,8456 & 0,8934 \\
+Neural Network & 0,9012 & 0,8823 & 0,9245 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Pembahasan}
+\lipsum[8]
+
+\subsubsection{Analisis Performa}
+Validasi dilakukan menggunakan k-fold cross validation dengan k=5. Hasil menunjukkan konsistensi performa yang baik pada semua fold.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../plantuml/system_architecture.png}
+\caption{Arsitektur Sistem yang Dikembangkan}
+\label{fig:architecture}
+\end{figure}
+
+\subsubsection{Perbandingan dengan Penelitian Sebelumnya}
+\lipsum[9]
+
+\section{KESIMPULAN DAN SARAN}
+
+\subsection{Kesimpulan}
+Berdasarkan hasil penelitian yang telah dilakukan, dapat disimpulkan bahwa:
+\begin{enumerate}
+    \item Sistem machine learning yang dikembangkan menunjukkan performa yang memuaskan dengan accuracy tertinggi 90,12\%
+    \item Neural Network memberikan hasil terbaik dibandingkan dengan metode lainnya
+    \item Framework yang dikembangkan dapat digunakan untuk kasus serupa
+\end{enumerate}
+
+\subsection{Saran}
+Untuk penelitian selanjutnya, disarankan:
+\begin{enumerate}
+    \item Menggunakan dataset yang lebih besar dan beragam
+    \item Mengimplementasikan teknik optimisasi untuk real-time processing
+    \item Melakukan evaluasi pada domain aplikasi yang berbeda
+\end{enumerate}
+
+\newpage
+\printbibliography[title=DAFTAR PUSTAKA]
+
+\end{document}

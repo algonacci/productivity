@@ -1,0 +1,253 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[
+    pdftitle={Laporan Penelitian - Productivity System},
+    pdfauthor={Nama Mahasiswa},
+    pdfsubject={Machine Learning Research},
+    pdfkeywords={machine learning, research, productivity},
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=blue
+]{hyperref}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    language=Python,
+    numbers=left,
+    numberstyle=\tiny,
+    backgroundcolor=\color{gray!10},
+    commentstyle=\color{green!50!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
+
+\geometry{margin=2.5cm}
+\onehalfspacing
+
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\title{Judul Laporan}
+\author{Nama Mahasiswa\\
+        NIM: 123456789\\
+        Kelas: X}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% \newpage
+% \tableofcontents
+% \newpage
+
+\section{Pendahuluan}
+\subsection{Latar Belakang}
+\lipsum[1-2]
+
+\subsection{Rumusan Masalah}
+Berdasarkan latar belakang yang telah dijelaskan, dapat dirumuskan masalah sebagai berikut:
+\begin{enumerate}
+    \item Bagaimana cara mengimplementasikan algoritma machine learning?
+    \item Apa saja tantangan dalam pengembangan sistem ini?
+    \item Bagaimana evaluasi performa sistem yang telah dibuat?
+\end{enumerate}
+
+\subsection{Tujuan}
+Tujuan dari penelitian ini adalah:
+\begin{itemize}
+    \item Mengembangkan sistem yang efisien dan akurat
+    \item Melakukan analisis performa terhadap berbagai metode
+    \item Memberikan rekomendasi untuk pengembangan lebih lanjut
+\end{itemize}
+
+\section{Tinjauan Pustaka}
+\subsection{Konsep Dasar}
+\lipsum[3]
+
+\subsection{Penelitian Terkait}
+Berbagai penelitian telah dilakukan dalam bidang machine learning \cite{smith2023machine}. Algoritma klasik seperti yang dijelaskan oleh \cite{brown2022algorithms} masih relevan dalam konteks modern. Pendekatan deep learning yang dikembangkan oleh \cite{wilson2023deep} menunjukkan hasil yang menjanjikan.
+
+\subsubsection{Metode Klasik}
+\lipsum[5]
+
+\subsubsection{Pendekatan Modern}
+\lipsum[6]
+
+\section{Metodologi}
+\subsection{Desain Penelitian}
+\lipsum[7]
+
+\subsection{Dataset dan Preprocessing}
+Dataset yang digunakan dalam penelitian ini terdiri dari beberapa komponen seperti yang ditunjukkan pada Tabel \ref{tab:dataset}.
+
+\begin{table}[H]
+\centering
+\caption{Karakteristik Dataset}
+\label{tab:dataset}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Kategori} & \textbf{Jumlah} & \textbf{Persentase} \\
+\midrule
+Training Data & 8,000 & 80\% \\
+Validation Data & 1,000 & 10\% \\
+Test Data & 1,000 & 10\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Implementasi Algoritma}
+Berikut adalah contoh implementasi algoritma yang digunakan:
+
+\begin{lstlisting}[caption=Implementasi Algoritma Machine Learning, label=lst:algorithm]
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+def load_and_preprocess_data(file_path):
+    """
+    Memuat dan melakukan preprocessing data
+    """
+    data = pd.read_csv(file_path)
+
+    # Membersihkan data dari nilai null
+    data = data.dropna()
+
+    # Normalisasi fitur numerik
+    numeric_features = data.select_dtypes(include=[np.number]).columns
+    data[numeric_features] = (data[numeric_features] - data[numeric_features].mean()) / data[numeric_features].std()
+
+    return data
+
+def train_model(X_train, y_train):
+    """
+    Melatih model Random Forest
+    """
+    model = RandomForestClassifier(
+        n_estimators=100,
+        max_depth=10,
+        random_state=42
+    )
+
+    model.fit(X_train, y_train)
+    return model
+
+# Main execution
+if __name__ == "__main__":
+    # Load data
+    data = load_and_preprocess_data("dataset.csv")
+
+    # Split features and target
+    X = data.drop('target', axis=1)
+    y = data['target']
+
+    # Train-test split
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+
+    # Train model
+    model = train_model(X_train, y_train)
+
+    # Evaluate
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+
+    print(f"Accuracy: {accuracy:.4f}")
+    print(classification_report(y_test, y_pred))
+\end{lstlisting}
+
+\section{Hasil dan Pembahasan}
+\subsection{Hasil Eksperimen}
+\lipsum[8]
+
+Hasil evaluasi performa model ditunjukkan pada Tabel \ref{tab:results}.
+
+\begin{table}[H]
+\centering
+\caption{Hasil Evaluasi Model}
+\label{tab:results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} \\
+\midrule
+Random Forest & 0.8945 & 0.8712 & 0.9123 \\
+SVM & 0.8734 & 0.8456 & 0.8934 \\
+Neural Network & 0.9012 & 0.8823 & 0.9245 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analisis Performa}
+\lipsum[9]
+
+\subsubsection{Perbandingan Metode}
+\lipsum[10]
+
+\subsubsection{Validasi Hasil}
+Validasi dilakukan menggunakan k-fold cross validation dengan k=5. Hasil menunjukkan konsistensi performa yang baik across different folds.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{system_architecture.png}
+\caption{System Architecture Diagram}
+\label{fig:architecture}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\fbox{\begin{minipage}{0.7\textwidth}
+\centering
+\vspace{2cm}
+[Placeholder untuk grafik hasil validasi]
+\vspace{2cm}
+\end{minipage}}
+\caption{Grafik Hasil Validasi Cross-Validation}
+\label{fig:validation}
+\end{figure}
+
+\subsection{Diskusi}
+\lipsum[11]
+
+\section{Kesimpulan}
+\subsection{Ringkasan Penelitian}
+\lipsum[12]
+
+\subsection{Kontribusi}
+Kontribusi utama dari penelitian ini meliputi:
+\begin{enumerate}
+    \item Pengembangan framework yang dapat digunakan untuk kasus serupa
+    \item Analisis komprehensif terhadap berbagai metode yang ada
+    \item Rekomendasi praktis untuk implementasi di dunia nyata
+\end{enumerate}
+
+\subsection{Keterbatasan dan Saran}
+\lipsum[13]
+
+\printbibliography[title=Daftar Pustaka]
+
+\end{document}

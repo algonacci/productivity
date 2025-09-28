@@ -1,0 +1,57 @@
+@startuml system_architecture
+!theme plain
+title System Architecture Diagram
+
+package "Frontend Layer" {
+    [Web Interface] as web
+    [Mobile App] as mobile
+    [Admin Dashboard] as admin
+}
+
+package "API Gateway" {
+    [API Gateway] as gateway
+}
+
+package "Business Logic Layer" {
+    [User Service] as user
+    [Authentication Service] as auth
+    [Data Processing Service] as process
+    [Notification Service] as notify
+}
+
+package "Data Layer" {
+    database "Primary Database" as db1
+    database "Cache" as cache
+    database "Analytics DB" as db2
+}
+
+package "External Services" {
+    [Email Service] as email
+    [SMS Service] as sms
+    [Payment Gateway] as payment
+}
+
+' Connections
+web --> gateway
+mobile --> gateway
+admin --> gateway
+
+gateway --> user
+gateway --> auth
+gateway --> process
+gateway --> notify
+
+user --> db1
+auth --> cache
+process --> db1
+process --> db2
+notify --> email
+notify --> sms
+
+user --> payment
+
+note right of db1 : PostgreSQL\nPrimary data storage
+note right of cache : Redis\nSession & temp data
+note right of db2 : InfluxDB\nTime-series analytics
+
+@enduml

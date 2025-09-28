@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java:*)",
+      "Bash(plantuml:*)",
+      "Bash(curl:*)",
+      "Read(//c/Users/Braincore/Documents/GitHub/tugas-mkom/Semester_2/Mobile_Application/Pertemuan_2/**)",
+      "Read(//c/Users/Braincore/Documents/GitHub/belajar-quarto/**)",
+      "Bash(mv:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

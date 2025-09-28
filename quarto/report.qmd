@@ -1,0 +1,195 @@
+---
+title: "Judul Laporan"
+author:
+  - name: "Nama Mahasiswa"
+    affiliations:
+      - name: "Program Studi"
+      - name: "Fakultas"
+      - name: "Universitas"
+    attributes:
+      - NIM: "123456789"
+      - Kelas: "X"
+date: today
+date-format: "MMMM DD, YYYY"
+
+format:
+  pdf:
+    documentclass: article
+    fontsize: 12pt
+    geometry:
+      - margin=2.5cm
+      - a4paper
+    linestretch: 1.5
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    css: report.css
+    include-in-header:
+      text: |
+        \usepackage{mathptmx}
+        \usepackage{float}
+        \floatplacement{figure}{H}
+        \floatplacement{table}{H}
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \usepackage{setspace}
+
+bibliography: ../latex/references.bib
+
+execute:
+  echo: true
+  warning: false
+  message: false
+
+fig-dpi: 300
+fig-format: png
+---
+
+## Pendahuluan
+
+### Latar Belakang
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+
+### Rumusan Masalah
+
+Berdasarkan latar belakang yang telah dijelaskan, dapat dirumuskan masalah sebagai berikut:
+
+1. Bagaimana cara mengimplementasikan algoritma machine learning?
+2. Apa saja tantangan dalam pengembangan sistem ini?
+3. Bagaimana evaluasi performa sistem yang telah dibuat?
+
+### Tujuan
+
+Tujuan dari penelitian ini adalah:
+
+- Mengembangkan sistem yang efisien dan akurat
+- Melakukan analisis performa terhadap berbagai metode
+- Memberikan rekomendasi untuk pengembangan lebih lanjut
+
+## Metodologi
+
+### Dataset dan Preprocessing
+
+Dataset yang digunakan dalam penelitian ini terdiri dari beberapa komponen:
+
+| Kategori        | Jumlah | Persentase |
+|-----------------|--------|------------|
+| Training Data   | 8,000  | 80%        |
+| Validation Data | 1,000  | 10%        |
+| Test Data       | 1,000  | 10%        |
+
+: Karakteristik Dataset {#tbl-dataset}
+
+Seperti yang terlihat pada @tbl-dataset, dataset dibagi menjadi tiga bagian utama untuk memastikan evaluasi model yang robust.
+
+### Implementasi Algoritma
+
+Berikut adalah contoh implementasi algoritma yang digunakan:
+
+Implementasi algoritma machine learning melibatkan beberapa tahap utama:
+
+1. **Data Loading dan Preprocessing**: Memuat dataset dan melakukan pembersihan data
+2. **Feature Engineering**: Normalisasi dan transformasi fitur
+3. **Model Training**: Pelatihan model Random Forest dengan parameter optimal
+4. **Evaluation**: Evaluasi performa menggunakan berbagai metrik
+
+Pseudocode untuk implementasi:
+
+```
+FUNCTION load_and_preprocess_data(file_path):
+    data = load_csv(file_path)
+    data = remove_null_values(data)
+    data = normalize_numeric_features(data)
+    RETURN data
+
+FUNCTION train_model(X_train, y_train):
+    model = RandomForestClassifier(n_estimators=100, max_depth=10)
+    model.fit(X_train, y_train)
+    RETURN model
+```
+
+## Hasil dan Pembahasan
+
+### Hasil Eksperimen
+
+Hasil evaluasi performa model ditunjukkan pada tabel berikut:
+
+| Model          | Accuracy | Precision | Recall |
+|----------------|----------|-----------|--------|
+| Random Forest  | 0.8945   | 0.8712    | 0.9123 |
+| SVM            | 0.8734   | 0.8456    | 0.8934 |
+| Neural Network | 0.9012   | 0.8823    | 0.9245 |
+
+: Hasil Evaluasi Model {#tbl-results}
+
+Dari @tbl-results dapat dilihat bahwa Neural Network memberikan performa terbaik dengan accuracy 90.12%.
+
+### System Architecture
+
+![System Architecture](../plantuml/system_architecture.png){#fig-architecture width=80%}
+
+@fig-architecture menunjukkan arsitektur sistem yang dikembangkan, dengan komponen-komponen utama meliputi frontend layer, business logic layer, dan data layer.
+
+### Analisis Performa
+
+Validasi dilakukan menggunakan k-fold cross validation dengan k=5. Hasil menunjukkan konsistensi performa yang baik across different folds.
+
+#### Perbandingan dengan Baseline
+
+Performa model yang dikembangkan menunjukkan peningkatan signifikan dibandingkan dengan baseline methods. Beberapa faktor yang berkontribusi:
+
+1. **Feature Engineering**: Preprocessing yang optimal
+2. **Hyperparameter Tuning**: Grid search untuk optimal parameters
+3. **Ensemble Methods**: Kombinasi multiple algorithms
+
+#### Validasi Statistik
+
+Uji statistik dilakukan untuk memvalidasi signifikansi hasil:
+
+$$
+t = \frac{\bar{x_1} - \bar{x_2}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+$$
+
+Dimana $\bar{x_1}$ dan $\bar{x_2}$ adalah mean accuracy dari dua model yang dibandingkan.
+
+## Kesimpulan
+
+### Ringkasan Penelitian
+
+Penelitian ini berhasil mengembangkan sistem machine learning dengan performa yang memuaskan. Neural Network menunjukkan accuracy tertinggi pada 90.12%, diikuti oleh Random Forest dengan 89.45%.
+
+### Kontribusi
+
+Kontribusi utama dari penelitian ini meliputi:
+
+1. **Pengembangan framework** yang dapat digunakan untuk kasus serupa
+2. **Analisis komprehensif** terhadap berbagai metode yang ada
+3. **Rekomendasi praktis** untuk implementasi di dunia nyata
+
+### Keterbatasan dan Saran
+
+**Keterbatasan:**
+
+- Dataset terbatas pada domain spesifik
+- Evaluasi belum mencakup real-time performance
+- Computational cost belum dioptimalkan
+
+**Saran untuk penelitian selanjutnya:**
+
+- Perlu evaluasi pada dataset yang lebih besar
+- Implementasi real-time masih memerlukan optimisasi
+- Eksplorasi deep learning architectures yang lebih advanced
+
+## Referensi
+
+::: {#refs}
+:::
+
+---
+
+*Generated with productivity templates - [GitHub Repository](https://github.com/algonacci/productivity)*

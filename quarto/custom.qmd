@@ -1,0 +1,143 @@
+---
+title: Quarto Example
+author: Eric Julianto
+format:
+    revealjs:
+        theme: custom.css
+        slide-number: c/t
+        chalkboard:
+            buttons: true
+            theme: whiteboard
+        transition: slide
+        background-transition: fade
+        code-copy: true
+        code-fold: true
+        code-overflow: wrap
+        # scrollable: true
+        smaller: false
+        incremental: false
+        preview-links: auto
+        logo: "logo.png"
+        footer: ""
+        margin: 0.1
+        fig-responsive: true
+        highlight-style: github
+        html-math-method: katex
+---
+
+# Hello World!
+Ini adalah test
+
+## Apa yahhh
+Insert meme here
+
+## Contoh Tabel
+
+| Nama      | Umur | Kota      | Pekerjaan     |
+|-----------|------|-----------|---------------|
+| Alice     | 25   | Jakarta   | Developer     |
+| Bob       | 30   | Bandung   | Designer      |
+| Charlie   | 28   | Surabaya  | Data Analyst  |
+| Diana     | 32   | Yogya     | Project Manager |
+
+: Tabel Data Karyawan {#tbl-karyawan}
+
+## Contoh Flowchart
+
+```{mermaid}
+flowchart TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug the code]
+    D --> E[Fix the bug]
+    E --> B
+    C --> F[Deploy to production]
+    F --> G[End]
+
+    style A fill:#e1f5fe
+    style G fill:#c8e6c9
+    style C fill:#fff3e0
+    style D fill:#ffebee
+```
+
+## Contoh PlantUML
+
+![Enterprise Architecture](test.png){#fig-plantuml width=40%}
+
+## LSTM Math {.smaller}
+
+LSTM gating mechanism:
+
+$$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$ {#eq-forget}
+$$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$ {#eq-input}
+$$C_t = f_t * C_{t-1} + i_t * \tilde{C}_t$$ {#eq-cell}
+$$h_t = o_t * \tanh(C_t)$$ {#eq-hidden}
+
+Cross-ref: @eq-forget (forget), @eq-cell (update)
+
+## Code Example {.smaller}
+
+```python
+import torch
+import torch.nn as nn
+
+class LSTM(nn.Module):
+    def __init__(self, input_size, hidden_size):
+        super(LSTM, self).__init__()
+        self.hidden_size = hidden_size
+
+        # Gates: forget, input, output
+        self.W_f = nn.Linear(input_size + hidden_size, hidden_size)
+        self.W_i = nn.Linear(input_size + hidden_size, hidden_size)
+        self.W_o = nn.Linear(input_size + hidden_size, hidden_size)
+        self.W_C = nn.Linear(input_size + hidden_size, hidden_size)
+
+    def forward(self, x, h_prev, C_prev):
+        combined = torch.cat([x, h_prev], dim=1)
+
+        f_t = torch.sigmoid(self.W_f(combined))  # Forget gate
+        i_t = torch.sigmoid(self.W_i(combined))  # Input gate
+        C_tilde = torch.tanh(self.W_C(combined)) # Candidate
+        C_t = f_t * C_prev + i_t * C_tilde      # Cell state
+
+        o_t = torch.sigmoid(self.W_o(combined))  # Output gate
+        h_t = o_t * torch.tanh(C_t)              # Hidden state
+
+        return h_t, C_t
+```
+
+## Code Highlighting {.smaller}
+
+```javascript
+// Async/await with error handling
+async function fetchUserData(userId) {
+    try {
+        const response = await fetch(`/api/users/${userId}`);
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const userData = await response.json();
+        return userData;
+    } catch (error) {
+        console.error('Failed to fetch user:', error);
+        return null;
+    }
+}
+```
+
+```rust
+// Pattern matching & Option handling
+fn process_config(config: Option<Config>) -> Result<String, ConfigError> {
+    match config {
+        Some(cfg) if cfg.is_valid() => {
+            println!("Processing config: {}", cfg.name);
+            Ok(format!("Config {} loaded", cfg.name))
+        },
+        Some(_) => Err(ConfigError::Invalid),
+        None => Err(ConfigError::Missing),
+    }
+}
+```
+

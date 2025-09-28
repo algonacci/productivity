@@ -1,0 +1,248 @@
+/* Computer Modern CSS for Markdown PDF Export */
+/* Konsisten dengan LaTeX dan Quarto templates */
+
+/* Import Computer Modern fonts */
+@import url('https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css');
+
+/* Page settings - sama dengan LaTeX template */
+@page {
+    margin: 2.5cm;
+    size: A4;
+}
+
+/* Body typography - Computer Modern seperti LaTeX */
+body {
+    font-family: "Computer Modern Serif", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    text-align: justify;
+    hyphens: auto;
+    letter-spacing: -0.01em;
+}
+
+/* Headers - hierarchy seperti LaTeX sections */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Computer Modern Serif", serif;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    page-break-after: avoid;
+}
+
+h1 {
+    font-size: 20pt;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+    page-break-before: always;
+}
+
+h2 {
+    font-size: 16pt;
+    margin-top: 2em;
+}
+
+h3 {
+    font-size: 14pt;
+    margin-top: 1.5em;
+}
+
+h4 {
+    font-size: 12pt;
+    margin-top: 1em;
+}
+
+h5, h6 {
+    font-size: 12pt;
+    font-style: italic;
+}
+
+/* Paragraphs */
+p {
+    margin: 0;
+    text-indent: 1.5em;
+    line-height: 1.6;
+}
+
+p:first-child,
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+    text-indent: 0;
+}
+
+/* Lists - seperti enumerate di LaTeX */
+ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+li {
+    margin: 0.25em 0;
+    line-height: 1.5;
+}
+
+/* Code blocks - Computer Modern Typewriter */
+code {
+    font-family: "Computer Modern Typewriter", monospace;
+    font-size: 10pt;
+    letter-spacing: -0.05em;
+    background-color: #f5f5f5;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+}
+
+pre {
+    font-family: "Computer Modern Typewriter", monospace;
+    font-size: 9pt;
+    line-height: 1.3;
+    letter-spacing: -0.05em;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Tables - seperti booktabs di LaTeX */
+table {
+    border-collapse: collapse;
+    margin: 1.5em auto;
+    width: 100%;
+    page-break-inside: avoid;
+}
+
+th, td {
+    padding: 0.5em 1em;
+    text-align: left;
+    border: none;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+}
+
+tr:last-child td {
+    border-bottom: 2px solid #000;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Images - seperti includegraphics di LaTeX */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    page-break-inside: avoid;
+}
+
+/* Blockquotes */
+blockquote {
+    font-style: italic;
+    margin: 1em 2em;
+    padding: 0.5em 1em;
+    border-left: 3px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2em 0;
+}
+
+/* Title page styling */
+h1:first-child {
+    font-size: 24pt;
+    margin-top: 3cm;
+    margin-bottom: 2cm;
+    page-break-before: auto;
+}
+
+/* Author info styling */
+p strong {
+    font-weight: bold;
+}
+
+/* Page breaks */
+.page-break {
+    page-break-before: always;
+}
+
+/* Print optimizations */
+@media print {
+    body {
+        print-color-adjust: exact;
+    }
+
+    a[href]:after {
+        content: none;
+    }
+
+    img {
+        max-height: 100vh;
+        object-fit: contain;
+    }
+}
+
+/* TOC styling (jika digunakan) */
+.toc {
+    page-break-after: always;
+    margin-bottom: 2em;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc li {
+    margin: 0.25em 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+/* Mathematics styling */
+.math {
+    font-family: "Computer Modern Serif", serif;
+}
+
+/* Footer/header jika diperlukan */
+.footer {
+    position: fixed;
+    bottom: 1cm;
+    width: 100%;
+    text-align: center;
+    font-size: 10pt;
+    color: #666;
+}
