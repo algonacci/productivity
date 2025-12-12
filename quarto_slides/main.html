@@ -94,7 +94,27 @@
     code span.va { color: #e36209; } /* Variable */
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto-6e7de4cd0202d1bc345d94cd7a642035.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -205,6 +225,8 @@
       margin-right: 0; 
     }
   </style>
+  <script type="module" src="main_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="main_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
   <script src="main_files/libs/quarto-diagram/mermaid.min.js"></script>
   <script src="main_files/libs/quarto-diagram/mermaid-init.js"></script>
   <link href="main_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -230,10 +252,47 @@ Eric Julianto
 <h1>Hello World!</h1>
 <p>Ini adalah test</p>
 </section>
+<section id="profile-slide" class="slide level2 smaller">
+<h2>Profile / Bio Slide</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="./images/profile.jpg" class="img-fluid" style="border-radius: 50%; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;" width="200"></p>
+<div style="font-size: 0.9em; line-height: 1.8; text-align: center;">
+<p><strong>x.com</strong>/username</p>
+<p><strong>github.com</strong>/username</p>
+</div>
+</div><div class="column" style="width:70%;">
+<div style="padding-left: 30px;">
+<p><strong>Work Experience</strong></p>
+<style>
+.compact-list li { margin-bottom: 0.3em; line-height: 1.2; }
+.compact-list .period { font-size: 0.85em; color: #666; display: block; margin-top: -0.2em; }
+</style>
+<div class="compact-list">
+<ul>
+<li><p>Senior Developer at Tech Corp <span class="period">(2023 - Now)</span></p></li>
+<li><p>Software Engineer at StartUp Inc <span class="period">(2020 - 2023)</span></p></li>
+</ul>
+</div>
+<p><strong>Education</strong></p>
+<ul>
+<li>Computer Science at University Name</li>
+</ul>
+</div>
+</div></div>
+</section>
 <section id="apa-yahhh" class="slide level2">
 <h2>Apa yahhh</h2>
-<p>Insert meme here</p>
-</section>
+
+<img data-src="./images/demo.jpg" class="img-fluid quarto-figure quarto-figure-center r-stretch" width="300"><div style="text-align: center; font-size: 0.8em; color: gray;">
+<p><em>Insert meme here</em></p>
+</div>
+</section></section>
+<section>
+<section id="hello-image" class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="./images/hello-hello-everybody.jpg" class="img-fluid r-stretch" style="margin: 20px auto; display: block;" width="300"></section>
 <section id="contoh-tabel" class="slide level2">
 <h2>Contoh Tabel</h2>
 <div id="tbl-karyawan" class="quarto-float quarto-figure quarto-figure-center">
@@ -312,75 +371,417 @@ Table&nbsp;1: Tabel Data Karyawan
 <section id="contoh-plantuml" class="slide level2">
 <h2>Contoh PlantUML</h2>
 
-<img data-src="./system_architecture.png" class="img-fluid r-stretch quarto-figure-center" style="width:40.0%" id="fig-plantuml"><p class="caption">
-Figure&nbsp;1: Enterprise Architecture
-</p></section>
+<img data-src="./images/system_architecture.png" class="img-fluid quarto-figure quarto-figure-center r-stretch" style="width:40.0%"><div style="text-align: center; font-size: 0.8em; color: gray;">
+<p><em>Enterprise Architecture Diagram</em></p>
+</div>
+</section>
 <section id="lstm-math" class="slide level2 smaller">
 <h2>LSTM Math</h2>
 <p>LSTM gating mechanism:</p>
 <p><span id="eq-forget"><span class="math display">f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \tag{1}</span></span> <span id="eq-input"><span class="math display">i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \tag{2}</span></span> <span id="eq-cell"><span class="math display">C_t = f_t * C_{t-1} + i_t * \tilde{C}_t \tag{3}</span></span> <span id="eq-hidden"><span class="math display">h_t = o_t * \tanh(C_t) \tag{4}</span></span></p>
 <p>Cross-ref: <a href="#/eq-forget" class="quarto-xref">Equation&nbsp;1</a> (forget), <a href="#/eq-cell" class="quarto-xref">Equation&nbsp;3</a> (update)</p>
 </section>
+<section id="latex-equations" class="slide level2">
+<h2>LaTeX Equations</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource tex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href=""></a><span class="kw">\begin</span>{<span class="ex">gather*</span>}</span>
+<span id="cb1-2"><a href=""></a><span class="ss">a_1=b_1+c_1</span><span class="sc">\\</span></span>
+<span id="cb1-3"><a href=""></a><span class="ss">a_2=b_2+c_2-d_2+e_2</span></span>
+<span id="cb1-4"><a href=""></a><span class="kw">\end</span>{<span class="ex">gather*</span>}</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb1-7"><a href=""></a><span class="ss">a_{11}&amp; =b_{11}&amp;</span></span>
+<span id="cb1-8"><a href=""></a><span class="ss">  a_{12}&amp; =b_{12}</span><span class="sc">\\</span></span>
+<span id="cb1-9"><a href=""></a><span class="ss">a_{21}&amp; =b_{21}&amp;</span></span>
+<span id="cb1-10"><a href=""></a><span class="ss">  a_{22}&amp; =b_{22}+c_{22}</span></span>
+<span id="cb1-11"><a href=""></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:60%;">
+<span class="math display">\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}</span>
+<span class="math display">\begin{align}
+a_{11}&amp; =b_{11}&amp;
+  a_{12}&amp; =b_{12}\\
+a_{21}&amp; =b_{21}&amp;
+  a_{22}&amp; =b_{22}+c_{22}
+\end{align}</span>
+</div></div>
+<div class="footer">
+<p>Learn more: <a href="https://quarto.org/docs/authoring/markdown-basics.html#equations">LaTeX Equations</a></p>
+</div>
+</section>
 <section id="code-example" class="slide level2 smaller">
 <h2>Code Example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> torch</span>
-<span id="cb1-2"><a href=""></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
-<span id="cb1-3"><a href=""></a></span>
-<span id="cb1-4"><a href=""></a><span class="kw">class</span> LSTM(nn.Module):</span>
-<span id="cb1-5"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, input_size, hidden_size):</span>
-<span id="cb1-6"><a href=""></a>        <span class="bu">super</span>(LSTM, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
-<span id="cb1-7"><a href=""></a>        <span class="va">self</span>.hidden_size <span class="op">=</span> hidden_size</span>
-<span id="cb1-8"><a href=""></a></span>
-<span id="cb1-9"><a href=""></a>        <span class="co"># Gates: forget, input, output</span></span>
-<span id="cb1-10"><a href=""></a>        <span class="va">self</span>.W_f <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
-<span id="cb1-11"><a href=""></a>        <span class="va">self</span>.W_i <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
-<span id="cb1-12"><a href=""></a>        <span class="va">self</span>.W_o <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
-<span id="cb1-13"><a href=""></a>        <span class="va">self</span>.W_C <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
-<span id="cb1-14"><a href=""></a></span>
-<span id="cb1-15"><a href=""></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x, h_prev, C_prev):</span>
-<span id="cb1-16"><a href=""></a>        combined <span class="op">=</span> torch.cat([x, h_prev], dim<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-17"><a href=""></a></span>
-<span id="cb1-18"><a href=""></a>        f_t <span class="op">=</span> torch.sigmoid(<span class="va">self</span>.W_f(combined))  <span class="co"># Forget gate</span></span>
-<span id="cb1-19"><a href=""></a>        i_t <span class="op">=</span> torch.sigmoid(<span class="va">self</span>.W_i(combined))  <span class="co"># Input gate</span></span>
-<span id="cb1-20"><a href=""></a>        C_tilde <span class="op">=</span> torch.tanh(<span class="va">self</span>.W_C(combined)) <span class="co"># Candidate</span></span>
-<span id="cb1-21"><a href=""></a>        C_t <span class="op">=</span> f_t <span class="op">*</span> C_prev <span class="op">+</span> i_t <span class="op">*</span> C_tilde      <span class="co"># Cell state</span></span>
-<span id="cb1-22"><a href=""></a></span>
-<span id="cb1-23"><a href=""></a>        o_t <span class="op">=</span> torch.sigmoid(<span class="va">self</span>.W_o(combined))  <span class="co"># Output gate</span></span>
-<span id="cb1-24"><a href=""></a>        h_t <span class="op">=</span> o_t <span class="op">*</span> torch.tanh(C_t)              <span class="co"># Hidden state</span></span>
-<span id="cb1-25"><a href=""></a></span>
-<span id="cb1-26"><a href=""></a>        <span class="cf">return</span> h_t, C_t</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> torch</span>
+<span id="cb2-2"><a href=""></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a><span class="kw">class</span> LSTM(nn.Module):</span>
+<span id="cb2-5"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, input_size, hidden_size):</span>
+<span id="cb2-6"><a href=""></a>        <span class="bu">super</span>(LSTM, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb2-7"><a href=""></a>        <span class="va">self</span>.hidden_size <span class="op">=</span> hidden_size</span>
+<span id="cb2-8"><a href=""></a></span>
+<span id="cb2-9"><a href=""></a>        <span class="co"># Gates: forget, input, output</span></span>
+<span id="cb2-10"><a href=""></a>        <span class="va">self</span>.W_f <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
+<span id="cb2-11"><a href=""></a>        <span class="va">self</span>.W_i <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
+<span id="cb2-12"><a href=""></a>        <span class="va">self</span>.W_o <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
+<span id="cb2-13"><a href=""></a>        <span class="va">self</span>.W_C <span class="op">=</span> nn.Linear(input_size <span class="op">+</span> hidden_size, hidden_size)</span>
+<span id="cb2-14"><a href=""></a></span>
+<span id="cb2-15"><a href=""></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x, h_prev, C_prev):</span>
+<span id="cb2-16"><a href=""></a>        combined <span class="op">=</span> torch.cat([x, h_prev], dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-17"><a href=""></a></span>
+<span id="cb2-18"><a href=""></a>        f_t <span class="op">=</span> torch.sigmoid(<span class="va">self</span>.W_f(combined))  <span class="co"># Forget gate</span></span>
+<span id="cb2-19"><a href=""></a>        i_t <span class="op">=</span> torch.sigmoid(<span class="va">self</span>.W_i(combined))  <span class="co"># Input gate</span></span>
+<span id="cb2-20"><a href=""></a>        C_tilde <span class="op">=</span> torch.tanh(<span class="va">self</span>.W_C(combined)) <span class="co"># Candidate</span></span>
+<span id="cb2-21"><a href=""></a>        C_t <span class="op">=</span> f_t <span class="op">*</span> C_prev <span class="op">+</span> i_t <span class="op">*</span> C_tilde      <span class="co"># Cell state</span></span>
+<span id="cb2-22"><a href=""></a></span>
+<span id="cb2-23"><a href=""></a>        o_t <span class="op">=</span> torch.sigmoid(<span class="va">self</span>.W_o(combined))  <span class="co"># Output gate</span></span>
+<span id="cb2-24"><a href=""></a>        h_t <span class="op">=</span> o_t <span class="op">*</span> torch.tanh(C_t)              <span class="co"># Hidden state</span></span>
+<span id="cb2-25"><a href=""></a></span>
+<span id="cb2-26"><a href=""></a>        <span class="cf">return</span> h_t, C_t</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="code-highlighting" class="slide level2 smaller">
 <h2>Code Highlighting</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href=""></a><span class="co">// Async/await with error handling</span></span>
-<span id="cb2-2"><a href=""></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">fetchUserData</span>(userId) {</span>
-<span id="cb2-3"><a href=""></a>    <span class="cf">try</span> {</span>
-<span id="cb2-4"><a href=""></a>        <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="vs">`/api/users/</span><span class="sc">${</span>userId<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb2-5"><a href=""></a></span>
-<span id="cb2-6"><a href=""></a>        <span class="cf">if</span> (<span class="op">!</span>response<span class="op">.</span><span class="at">ok</span>) {</span>
-<span id="cb2-7"><a href=""></a>            <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(<span class="vs">`HTTP </span><span class="sc">${</span>response<span class="op">.</span><span class="at">status</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb2-8"><a href=""></a>        }</span>
-<span id="cb2-9"><a href=""></a></span>
-<span id="cb2-10"><a href=""></a>        <span class="kw">const</span> userData <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
-<span id="cb2-11"><a href=""></a>        <span class="cf">return</span> userData<span class="op">;</span></span>
-<span id="cb2-12"><a href=""></a>    } <span class="cf">catch</span> (error) {</span>
-<span id="cb2-13"><a href=""></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">'Failed to fetch user:'</span><span class="op">,</span> error)<span class="op">;</span></span>
-<span id="cb2-14"><a href=""></a>        <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
-<span id="cb2-15"><a href=""></a>    }</span>
-<span id="cb2-16"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb3-1"><a href=""></a><span class="co">// Pattern matching &amp; Option handling</span></span>
-<span id="cb3-2"><a href=""></a><span class="kw">fn</span> process_config(config<span class="op">:</span> <span class="dt">Option</span><span class="op">&lt;</span>Config<span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="dt">Result</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">,</span> ConfigError<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb3-3"><a href=""></a>    <span class="cf">match</span> config <span class="op">{</span></span>
-<span id="cb3-4"><a href=""></a>        <span class="cn">Some</span>(cfg) <span class="cf">if</span> cfg<span class="op">.</span>is_valid() <span class="op">=&gt;</span> <span class="op">{</span></span>
-<span id="cb3-5"><a href=""></a>            <span class="pp">println!</span>(<span class="st">"Processing config: {}"</span><span class="op">,</span> cfg<span class="op">.</span>name)<span class="op">;</span></span>
-<span id="cb3-6"><a href=""></a>            <span class="cn">Ok</span>(<span class="pp">format!</span>(<span class="st">"Config {} loaded"</span><span class="op">,</span> cfg<span class="op">.</span>name))</span>
-<span id="cb3-7"><a href=""></a>        <span class="op">},</span></span>
-<span id="cb3-8"><a href=""></a>        <span class="cn">Some</span>(_) <span class="op">=&gt;</span> <span class="cn">Err</span>(<span class="pp">ConfigError::</span>Invalid)<span class="op">,</span></span>
-<span id="cb3-9"><a href=""></a>        <span class="cn">None</span> <span class="op">=&gt;</span> <span class="cn">Err</span>(<span class="pp">ConfigError::</span>Missing)<span class="op">,</span></span>
-<span id="cb3-10"><a href=""></a>    <span class="op">}</span></span>
-<span id="cb3-11"><a href=""></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href=""></a><span class="co">// Async/await with error handling</span></span>
+<span id="cb3-2"><a href=""></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">fetchUserData</span>(userId) {</span>
+<span id="cb3-3"><a href=""></a>    <span class="cf">try</span> {</span>
+<span id="cb3-4"><a href=""></a>        <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="vs">`/api/users/</span><span class="sc">${</span>userId<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href=""></a></span>
+<span id="cb3-6"><a href=""></a>        <span class="cf">if</span> (<span class="op">!</span>response<span class="op">.</span><span class="at">ok</span>) {</span>
+<span id="cb3-7"><a href=""></a>            <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Error</span>(<span class="vs">`HTTP </span><span class="sc">${</span>response<span class="op">.</span><span class="at">status</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-8"><a href=""></a>        }</span>
+<span id="cb3-9"><a href=""></a></span>
+<span id="cb3-10"><a href=""></a>        <span class="kw">const</span> userData <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb3-11"><a href=""></a>        <span class="cf">return</span> userData<span class="op">;</span></span>
+<span id="cb3-12"><a href=""></a>    } <span class="cf">catch</span> (error) {</span>
+<span id="cb3-13"><a href=""></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">'Failed to fetch user:'</span><span class="op">,</span> error)<span class="op">;</span></span>
+<span id="cb3-14"><a href=""></a>        <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb3-15"><a href=""></a>    }</span>
+<span id="cb3-16"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><br></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb4-1"><a href=""></a><span class="co">// Pattern matching &amp; Option handling</span></span>
+<span id="cb4-2"><a href=""></a><span class="kw">fn</span> process_config(config<span class="op">:</span> <span class="dt">Option</span><span class="op">&lt;</span>Config<span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="dt">Result</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">,</span> ConfigError<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb4-3"><a href=""></a>    <span class="cf">match</span> config <span class="op">{</span></span>
+<span id="cb4-4"><a href=""></a>        <span class="cn">Some</span>(cfg) <span class="cf">if</span> cfg<span class="op">.</span>is_valid() <span class="op">=&gt;</span> <span class="op">{</span></span>
+<span id="cb4-5"><a href=""></a>            <span class="pp">println!</span>(<span class="st">"Processing config: {}"</span><span class="op">,</span> cfg<span class="op">.</span>name)<span class="op">;</span></span>
+<span id="cb4-6"><a href=""></a>            <span class="cn">Ok</span>(<span class="pp">format!</span>(<span class="st">"Config {} loaded"</span><span class="op">,</span> cfg<span class="op">.</span>name))</span>
+<span id="cb4-7"><a href=""></a>        <span class="op">},</span></span>
+<span id="cb4-8"><a href=""></a>        <span class="cn">Some</span>(_) <span class="op">=&gt;</span> <span class="cn">Err</span>(<span class="pp">ConfigError::</span>Invalid)<span class="op">,</span></span>
+<span id="cb4-9"><a href=""></a>        <span class="cn">None</span> <span class="op">=&gt;</span> <span class="cn">Err</span>(<span class="pp">ConfigError::</span>Missing)<span class="op">,</span></span>
+<span id="cb4-10"><a href=""></a>    <span class="op">}</span></span>
+<span id="cb4-11"><a href=""></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
+<section>
+<section id="advanced-layouts" class="title-slide slide level1 center">
+<h1>Advanced Layouts</h1>
+<p>Variasi Layout</p>
+</section>
+<section id="col-text-text" class="slide level2">
+<h2>Two Columns: Text &amp; Text</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="left-side">Left Side</h3>
+<ul>
+<li>Feature A</li>
+<li>Feature B</li>
+<li>Feature C</li>
+</ul>
+<p>Detailed explanation of the left side content.</p>
+</div><div class="column" style="width:50%;">
+<h3 id="right-side">Right Side</h3>
+<ul>
+<li>Benefit X</li>
+<li>Benefit Y</li>
+<li>Benefit Z</li>
+</ul>
+<p>Comparison or additional details on the right side.</p>
+</div></div>
+</section>
+<section id="col-text-image" class="slide level2">
+<h2>Two Columns: Text &amp; Image</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="context">Context</h3>
+<p>Here is the description of the system architecture shown on the right.</p>
+<ul>
+<li>Modular design</li>
+<li>Scalable components</li>
+<li>Secure data flow</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/tau-apa-tentang-sql-agent.png" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div style="text-align: center; font-size: 0.6em; color: gray;">
+<p><em>Figure 1: System Architecture</em></p>
+</div>
+</div></div>
+</section>
+<section id="col-image-text" class="slide level2">
+<h2>Two Columns: Image &amp; Text</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/demo.jpg" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div style="text-align: center; font-size: 0.6em; color: gray;">
+<p><em>Meme Illustration</em></p>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="the-visuals">The Visuals</h3>
+<p>The image on the left demonstrates the visual impact of the project.</p>
+<ol type="1">
+<li><strong>High engagement</strong></li>
+<li><strong>Viral potential</strong></li>
+<li><strong>Clear messaging</strong></li>
+</ol>
+</div></div>
+</section>
+<section id="centered-caption" class="slide level2">
+<h2>Image with Centered Caption</h2>
+
+<img data-src="./images/system_architecture.png" class="img-fluid quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><div style="text-align: center; font-size: 0.8em; color: gray;">
+<p><em>Figure 1: System Architecture Diagram showing the interaction between components</em></p>
+</div>
+</section>
+<section id="callouts" class="slide level2">
+<h2>Callouts &amp; Alerts</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>This is a standard note callout. Good for general information.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>This information is crucial and should not be ignored.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Pro tip: Use callouts to highlight key takeaways!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="fragments" class="slide level2">
+<h2>Fragments (Animations)</h2>
+<p>Items will appear one by one:</p>
+<ul>
+<li class="fragment">First item appears</li>
+<li class="fragment">Then the second item</li>
+<li class="fragment">Finally the third item</li>
+</ul>
+<div class="fragment">
+<p><strong>Pause!</strong> This text appears after a click.</p>
+</div>
+</section>
+<section id="tabsets" class="slide level2">
+<h2>Tabsets for Code</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Python</a></li><li><a href="#tabset-1-2">TypeScript</a></li><li><a href="#tabset-1-3">Rust</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="kw">def</span> hello():</span>
+<span id="cb5-2"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource typescript number-lines code-with-copy"><code class="sourceCode typescript"><span id="cb6-1"><a href=""></a><span class="kw">const</span> hello <span class="op">=</span> ()<span class="op">:</span> <span class="dt">void</span> <span class="kw">=&gt;</span> {</span>
+<span id="cb6-2"><a href=""></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hello World"</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource rust number-lines code-with-copy"><code class="sourceCode rust"><span id="cb7-1"><a href=""></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb7-2"><a href=""></a>    <span class="pp">println!</span>(<span class="st">"Hello World"</span>)<span class="op">;</span></span>
+<span id="cb7-3"><a href=""></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="full-scale-image" class="title-slide slide level1 center">
+<h1>Full Scale Image</h1>
+
+<img data-src="./images/logo_optimized.png" class="img-fluid r-stretch" style="margin: 20px auto; display: block;" width="300"></section>
+<section id="custom-css" class="slide level2">
+<h2>Custom CSS In-Slide</h2>
+<style>
+.custom-box {
+    border: 2px dashed #4287f5;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f7ff;
+    text-align: center;
+}
+</style>
+<div class="custom-box">
+<h3>
+Custom Styled Box
+</h3>
+<p>
+This box is styled using inline CSS just for this slide.
+</p>
+</div>
+</section></section>
+<section>
+<section id="advanced-features" class="title-slide slide level1 center">
+<h1>Advanced Features</h1>
+
+</section>
+<section id="ojs-charts" class="slide level2">
+<h2>Interactive Charts (OJS)</h2>
+<p>Great for Tech Leads pitching data!</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="420" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 419;"><span id="cb8-420"><a href=""></a>data <span class="op">=</span> [</span>
+<span id="cb8-421"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q1"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span> }<span class="op">,</span></span>
+<span id="cb8-422"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q2"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">150</span> }<span class="op">,</span></span>
+<span id="cb8-423"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q3"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">130</span> }<span class="op">,</span></span>
+<span id="cb8-424"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q4"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">200</span> }</span>
+<span id="cb8-425"><a href=""></a>]</span>
+<span id="cb8-426"><a href=""></a></span>
+<span id="cb8-427"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb8-428"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb8-429"><a href=""></a>    Plot<span class="op">.</span><span class="fu">barY</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})<span class="op">,</span></span>
+<span id="cb8-430"><a href=""></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})<span class="op">,</span></span>
+<span id="cb8-431"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb8-432"><a href=""></a>  ]</span>
+<span id="cb8-433"><a href=""></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="report-setup" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb9-1" class="hljs-ln-code"><a href=""></a><span class="kw">def</span> generate_report(data):</span>
+<span id="cb9-2" class="hljs-ln-code"><a href=""></a>    <span class="co"># Setup report configuration</span></span>
+<span id="cb9-3" class="hljs-ln-code"><a href=""></a>    config <span class="op">=</span> {</span>
+<span id="cb9-4" class="hljs-ln-code"><a href=""></a>        <span class="st">"title"</span>: <span class="st">"Monthly Report"</span>,</span>
+<span id="cb9-5" class="hljs-ln-code"><a href=""></a>        <span class="st">"timestamp"</span>: <span class="st">"2024-03-20"</span></span>
+<span id="cb9-6" class="hljs-ln-code"><a href=""></a>    }</span>
+<span id="cb9-7" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb9-8" class="hljs-ln-code"><a href=""></a>    <span class="cf">return</span> config</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="report-full" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb10-1" class="hljs-ln-code"><a href=""></a><span class="kw">def</span> generate_report(data):</span>
+<span id="cb10-2" class="hljs-ln-code"><a href=""></a>    <span class="co"># Setup report configuration</span></span>
+<span id="cb10-3" class="hljs-ln-code"><a href=""></a>    config <span class="op">=</span> {</span>
+<span id="cb10-4" class="hljs-ln-code"><a href=""></a>        <span class="st">"title"</span>: <span class="st">"Monthly Report"</span>,</span>
+<span id="cb10-5" class="hljs-ln-code"><a href=""></a>        <span class="st">"timestamp"</span>: <span class="st">"2024-03-20"</span></span>
+<span id="cb10-6" class="hljs-ln-code"><a href=""></a>    }</span>
+<span id="cb10-7" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb10-8" class="hljs-ln-code"><a href=""></a>    <span class="co"># Calculate summary statistics</span></span>
+<span id="cb10-9" class="hljs-ln-code"><a href=""></a>    config[<span class="st">"total"</span>] <span class="op">=</span> <span class="bu">sum</span>(data)</span>
+<span id="cb10-10" class="hljs-ln-code"><a href=""></a>    config[<span class="st">"average"</span>] <span class="op">=</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb10-11" class="hljs-ln-code"><a href=""></a>    config[<span class="st">"status"</span>] <span class="op">=</span> <span class="st">"Published"</span></span>
+<span id="cb10-12" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb10-13" class="hljs-ln-code"><a href=""></a>    <span class="cf">return</span> config</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="slide-backgrounds" class="slide level2" data-background-image="./images/demo.jpg" data-background-opacity="0.2">
+<h2>Slide Backgrounds</h2>
+<p>You can set full-screen background images.</p>
+<ul>
+<li>Good for cover slides</li>
+<li>Separation sections</li>
+<li>Emotional impact</li>
+</ul>
+</section>
+<section id="absolute-position" class="slide level2">
+<h2>Absolute Position</h2>
+<p>Position elements precisely where you want them.</p>
+<p><img data-src="./images/demo.jpg" class="absolute" style="top: 100px; left: 0px; width: 100px; height: auto; "></p>
+<p><img data-src="./images/any-question.png" class="absolute" style="top: 200px; right: 50px; width: 150px; height: auto; "></p>
+<p><img data-src="./images/tau-apa-tentang-sql-agent.png" class="absolute" style="left: 300px; bottom: 0px; width: 200px; height: auto; "></p>
+</section>
+<section id="stack-layout" class="slide level2">
+<h2>Stack Layout (Overlays)</h2>
+<div class="r-stack">
+<p><img data-src="./images/demo.jpg" class="fragment" width="400" height="400"> <img data-src="./images/any-question.png" class="fragment" width="300" height="300"> <img data-src="./images/tau-apa-tentang-sql-agent.png" class="fragment" width="200" height="200"></p>
+</div>
+<p><strong>Images are stacked on top of each other!</strong></p>
+</section>
+<section id="advanced-fragments" class="slide level2">
+<h2>Advanced Fragments</h2>
+<p>Animate text elements with different effects:</p>
+<div class="fragment fade-up">
+<p>This text slides up while fading in.</p>
+</div>
+<div class="fragment highlight-red">
+<p>This text turns red when focused.</p>
+</div>
+<div class="fragment strike">
+<p>This text gets crossed out.</p>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<p>This text fades in, then fades out partially.</p>
+</div>
+</section>
+<section id="citations" class="slide level2">
+<h2>Academic Citations</h2>
+<p>“Attention is all you need” paper <span class="citation" data-cites="vaswani2017attention">(<a href="#/references" role="doc-biblioref" onclick="">Vaswani et al. 2017</a>)</span> changed the AI landscape. Also, clean code is important <span class="citation" data-cites="cleanarchitecture">(<a href="#/references" role="doc-biblioref" onclick="">Martin 2017</a>)</span>.</p>
+
+<aside><div>
+<p>This is an aside / footnote for extra context.</p>
+</div></aside></section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cleanarchitecture" class="csl-entry" role="listitem">
+Martin, Robert C. 2017. <em>Clean Architecture: A Craftsman’s Guide to Software Structure and Design</em>. Prentice Hall.
+</div>
+<div id="ref-vaswani2017attention" class="csl-entry" role="listitem">
+Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. <span>“Attention Is All You Need.”</span> <em>Advances in Neural Information Processing Systems</em> 30.
+</div>
+</div>
+</section>
+<section id="qa" class="slide level2" style="text-align: center;">
+<h2>Q&amp;A</h2>
+
+<img data-src="./images/any-question.png" class="img-fluid r-stretch" style="margin: 20px auto; display: block;" width="300"><h3 id="thank-you-for-listening">Thank you for listening!</h3>
+</section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="logo.png" class="slide-logo"></p>
@@ -579,6 +980,17 @@ Figure&nbsp;1: Enterprise Architecture
           RevealZoom
         ]
       });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRhdGEgPSBbXG4gIHsgbmFtZTogXCJRMVwiLCB2YWx1ZTogMTAwIH0sXG4gIHsgbmFtZTogXCJRMlwiLCB2YWx1ZTogMTUwIH0sXG4gIHsgbmFtZTogXCJRM1wiLCB2YWx1ZTogMTMwIH0sXG4gIHsgbmFtZTogXCJRNFwiLCB2YWx1ZTogMjAwIH1cbl1cblxuUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmJhclkoZGF0YSwge3g6IFwibmFtZVwiLCB5OiBcInZhbHVlXCIsIGZpbGw6IFwic3RlZWxibHVlXCJ9KSxcbiAgICBQbG90LnRleHQoZGF0YSwge3g6IFwibmFtZVwiLCB5OiBcInZhbHVlXCIsIHRleHQ6IFwidmFsdWVcIiwgZHk6IC0xMH0pLFxuICAgIFBsb3QucnVsZVkoWzBdKVxuICBdXG59KVxuIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../..";
+    window._ojs.paths.runtimeToRoot = "../../..";
+    window._ojs.paths.docToRoot = "";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
