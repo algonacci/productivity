@@ -62,7 +62,7 @@ flowchart TD
 
 ## Contoh PlantUML
 
-![Enterprise Architecture](test.png){#fig-plantuml width=40%}
+![Enterprise Architecture](./system_architecture.png){#fig-plantuml width=40%}
 
 ## LSTM Math {.smaller}
 
