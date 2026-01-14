@@ -3,7 +3,9 @@ title: Quarto Example
 author: Eric Julianto
 format:
     revealjs:
-        theme: custom.css
+        theme: white
+        css: custom.css
+        resources: [logo-white.png]
         slide-number: c/t
         chalkboard:
             buttons: true
@@ -26,7 +28,7 @@ format:
 bibliography: references.bib
 ---
 
-# Hello World! {#hello-world}
+# Hello World! {#hello-world background-color="#2c3e50"}
 Ini adalah test
 
 ## Profile / Bio Slide {#profile-slide .smaller}

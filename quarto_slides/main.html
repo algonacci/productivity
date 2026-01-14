@@ -115,7 +115,8 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto-6e7de4cd0202d1bc345d94cd7a642035.css">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto-bbddfaabaaccfd8a5ddbf403c6be5566.css">
+  <link rel="stylesheet" href="custom.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -248,7 +249,7 @@ Eric Julianto
 
 </section>
 <section>
-<section id="hello-world" class="title-slide slide level1 center">
+<section id="hello-world" class="title-slide slide level1 center" data-background-color="#2c3e50">
 <h1>Hello World!</h1>
 <p>Ini adalah test</p>
 </section>
@@ -661,20 +662,20 @@ This box is styled using inline CSS just for this slide.
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="420" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 419;"><span id="cb8-420"><a href=""></a>data <span class="op">=</span> [</span>
-<span id="cb8-421"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q1"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span> }<span class="op">,</span></span>
-<span id="cb8-422"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q2"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">150</span> }<span class="op">,</span></span>
-<span id="cb8-423"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q3"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">130</span> }<span class="op">,</span></span>
-<span id="cb8-424"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q4"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">200</span> }</span>
-<span id="cb8-425"><a href=""></a>]</span>
-<span id="cb8-426"><a href=""></a></span>
-<span id="cb8-427"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb8-428"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb8-429"><a href=""></a>    Plot<span class="op">.</span><span class="fu">barY</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})<span class="op">,</span></span>
-<span id="cb8-430"><a href=""></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})<span class="op">,</span></span>
-<span id="cb8-431"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
-<span id="cb8-432"><a href=""></a>  ]</span>
-<span id="cb8-433"><a href=""></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="422" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 421;"><span id="cb8-422"><a href=""></a>data <span class="op">=</span> [</span>
+<span id="cb8-423"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q1"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span> }<span class="op">,</span></span>
+<span id="cb8-424"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q2"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">150</span> }<span class="op">,</span></span>
+<span id="cb8-425"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q3"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">130</span> }<span class="op">,</span></span>
+<span id="cb8-426"><a href=""></a>  { <span class="dt">name</span><span class="op">:</span> <span class="st">"Q4"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">200</span> }</span>
+<span id="cb8-427"><a href=""></a>]</span>
+<span id="cb8-428"><a href=""></a></span>
+<span id="cb8-429"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb8-430"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb8-431"><a href=""></a>    Plot<span class="op">.</span><span class="fu">barY</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})<span class="op">,</span></span>
+<span id="cb8-432"><a href=""></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})<span class="op">,</span></span>
+<span id="cb8-433"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb8-434"><a href=""></a>  ]</span>
+<span id="cb8-435"><a href=""></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
